@@ -1,6 +1,15 @@
 <script setup>
+import { ref } from 'vue';
 import NewTask from './components/NewTask.vue';
 import TaskList from './components/TaskList.vue';
+
+const TODOS = [
+  { id: '1', title: 'Design a website', Done: false },
+  { id: '2', title: 'Develop the website', Done: false },
+  { id: '3', title: 'Publish the website', Done: false },
+];
+
+const data = ref(TODOS);
 </script>
 
 <template>
@@ -10,7 +19,7 @@ import TaskList from './components/TaskList.vue';
     >
       <h1 class="text-4xl max-sm:text-2xl">Create your Todo-List</h1>
       <NewTask />
-      <TaskList />
+      <TaskList :data="data" />
     </section>
   </main>
 </template>
