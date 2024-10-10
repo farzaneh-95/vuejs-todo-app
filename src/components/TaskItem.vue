@@ -7,7 +7,7 @@ const { title } = defineProps(['title']);
 
 <template>
   <li
-    class="flex justify-center items-center border border-yellow-100 rounded-xl py-3 pl-4 pr-3 mb-4 hover:bg-black/10"
+    class="flex justify-center items-center border border-yellow-100 rounded-xl py-3 pl-4 pr-3 mb-4 hover:bg-black/10 animate-show opacity-0"
   >
     <p class="mr-8">{{ title }}</p>
     <div class="ml-auto flex justify-betwee text-white/80">

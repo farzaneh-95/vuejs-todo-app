@@ -17,9 +17,9 @@ const handleAddNewTask = (newTask) => data.value.unshift({ id: id++, title: newT
 </script>
 
 <template>
-  <main class="bg-yellow-50 h-screen p-20 max-md:p-0">
+  <main class="bg-yellow-50 h-screen p-20 max-sm:p-0">
     <section
-      class="bg-gray-800 flex flex-col max-h-full max-w-3xl mx-auto text-yellow-50 p-8 rounded-2xl text-lg max-sm:text-base max-md:w-full max-md:rounded-none max-sm:h-screen"
+      class="bg-gray-800 flex flex-col max-h-full max-w-xl mx-auto text-yellow-50 p-8 rounded-2xl max-sm:text-sm max-sm:min-w-[300px] max-sm:rounded-none max-sm:h-screen"
     >
       <h1 class="text-4xl max-sm:text-2xl">Create your Todo-List</h1>
       <NewTask @addNewTask="handleAddNewTask" />
