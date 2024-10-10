@@ -2,7 +2,7 @@
 import TaskItem from './TaskItem.vue';
 
 const { data } = defineProps(['data']);
-defineEmits(['removeTask']);
+defineEmits(['removeTask', 'toggleDone']);
 </script>
 
 <template>
@@ -11,7 +11,9 @@ defineEmits(['removeTask']);
       v-for="todo in data"
       :key="todo.id"
       :title="todo.title"
+      :done="todo.done"
       @removeTask="$emit('removeTask', todo.id)"
+      @toggleDone="$emit('toggleDone', todo.id)"
     />
   </ul>
 </template>

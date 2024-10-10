@@ -6,7 +6,7 @@ import TaskList from './components/TaskList.vue';
 let id = 0;
 
 const TODOS = [
-  { id: id++, title: 'Design a website', done: false },
+  { id: id++, title: 'Design a website', done: true },
   { id: id++, title: 'Develop the website', done: false },
   { id: id++, title: 'Publish the website', done: false },
 ];
@@ -16,6 +16,9 @@ const data = ref(TODOS);
 const handleAddNewTask = (newTask) => data.value.unshift({ id: id++, title: newTask, done: false });
 
 const handleRemoveTask = (id) => (data.value = data.value.filter((task) => task.id !== id));
+
+const handleToggleDone = (id) =>
+  (data.value = data.value.map((task) => (task.id === id ? { ...task, done: !task.done } : task)));
 </script>
 
 <template>
@@ -25,7 +28,7 @@ const handleRemoveTask = (id) => (data.value = data.value.filter((task) => task.
     >
       <h1 class="text-4xl max-sm:text-2xl">Create your Todo-List</h1>
       <NewTask @addNewTask="handleAddNewTask" />
-      <TaskList :data="data" @removeTask="handleRemoveTask" />
+      <TaskList :data="data" @removeTask="handleRemoveTask" @toggleDone="handleToggleDone" />
     </section>
   </main>
 </template>

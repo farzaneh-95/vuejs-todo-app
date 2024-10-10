@@ -2,11 +2,11 @@
 import svgIcon from '@jamescoyle/vue-icon';
 
 const { path, style } = defineProps(['path', 'style']);
-defineEmits(['removeTask']);
+defineEmits(['click']);
 </script>
 
 <template>
-  <button type="button" @click="$emit('removeTask')">
+  <button type="button" @click="$emit('click')">
     <svgIcon
       type="mdi"
       :path="path"
