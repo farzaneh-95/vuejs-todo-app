@@ -2,7 +2,7 @@
 import TaskItem from './TaskItem.vue';
 
 const { data } = defineProps(['data']);
-defineEmits(['removeTask', 'toggleDone']);
+defineEmits(['removeTask', 'toggleDone', 'modifyTask']);
 </script>
 
 <template>
@@ -14,6 +14,7 @@ defineEmits(['removeTask', 'toggleDone']);
       :done="todo.done"
       @removeTask="$emit('removeTask', todo.id)"
       @toggleDone="$emit('toggleDone', todo.id)"
+      @modifyTask="(modifiedTitle) => $emit('modifyTask', todo.id, modifiedTitle)"
     />
   </ul>
 </template>
