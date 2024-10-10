@@ -14,6 +14,8 @@ const TODOS = [
 const data = ref(TODOS);
 
 const handleAddNewTask = (newTask) => data.value.unshift({ id: id++, title: newTask, done: false });
+
+const handleRemoveTask = (id) => (data.value = data.value.filter((task) => task.id !== id));
 </script>
 
 <template>
@@ -23,7 +25,7 @@ const handleAddNewTask = (newTask) => data.value.unshift({ id: id++, title: newT
     >
       <h1 class="text-4xl max-sm:text-2xl">Create your Todo-List</h1>
       <NewTask @addNewTask="handleAddNewTask" />
-      <TaskList :data="data" />
+      <TaskList :data="data" @removeTask="handleRemoveTask" />
     </section>
   </main>
 </template>

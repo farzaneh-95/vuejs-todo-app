@@ -2,11 +2,17 @@
 import TaskItem from './TaskItem.vue';
 
 const { data } = defineProps(['data']);
+defineEmits(['removeTask']);
 </script>
 
 <template>
   <ul class="hide-scroll max-h-full mt-8 overflow-y-scroll overscroll-none box-content">
-    <TaskItem v-for="todo in data" :key="todo.id" :title="todo.title" />
+    <TaskItem
+      v-for="todo in data"
+      :key="todo.id"
+      :title="todo.title"
+      @removeTask="$emit('removeTask', todo.id)"
+    />
   </ul>
 </template>
 

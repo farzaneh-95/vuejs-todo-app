@@ -3,6 +3,7 @@ import { mdiCheck, mdiPencilOutline, mdiTrashCanOutline } from '@mdi/js';
 import MDIcon from './UI/MDIcon.vue';
 
 const { title } = defineProps(['title']);
+defineEmits(['removeTask']);
 </script>
 
 <template>
@@ -13,7 +14,11 @@ const { title } = defineProps(['title']);
     <div class="ml-auto flex justify-betwee text-white/80">
       <MDIcon :path="mdiCheck" class="hover:text-green-400" />
       <MDIcon :path="mdiPencilOutline" class="hover:text-yellow-300" />
-      <MDIcon :path="mdiTrashCanOutline" class="hover:text-red-400" />
+      <MDIcon
+        :path="mdiTrashCanOutline"
+        class="hover:text-red-400"
+        @removeTask="$emit('removeTask')"
+      />
     </div>
   </li>
 </template>
