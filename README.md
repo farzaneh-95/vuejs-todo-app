@@ -1,35 +1,32 @@
-# todo-app
+# Vue.js Todo App
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple todo list application built with Vue.js.
 
-## Recommended IDE Setup
+This project showcases a Vue.js application built using the Vite build tool. Vite offers a fast development experience with its native ES modules support and server-side rendering capabilities.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Features
 
-## Customize configuration
+- Add, edit, and delete tasks
+- Mark tasks as completed
+- Local storage persistence
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Getting Started
 
-## Project Setup
+1. Clone the repository
 
 ```sh
+https://github.com/farzaneh-95/vuejs-todo-app.git
+```
+
+2. Install dependencies
+
+```sh
+cd vuejs-todo-app
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. Run the development server
 
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
