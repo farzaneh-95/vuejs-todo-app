@@ -10,7 +10,7 @@ const emit = defineEmits(['removeTask', 'toggleDone', 'modifyTask']);
 const isModifying = ref(false);
 
 const handleModifyTask = (modifiedTitle) => {
-  emit('modifyTask', modifiedTitle);
+  modifiedTitle.length && emit('modifyTask', modifiedTitle);
   isModifying.value = false;
 };
 </script>

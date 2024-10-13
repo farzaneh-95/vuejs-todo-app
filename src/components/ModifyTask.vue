@@ -1,12 +1,15 @@
 <script setup lang="ts">
+import { onMounted, ref, useTemplateRef } from 'vue';
 import { mdiClose, mdiContentSaveEditOutline } from '@mdi/js';
 import MDIcon from './UI/MDIcon.vue';
-import { ref } from 'vue';
 
 const { title } = defineProps(['title']);
 defineEmits(['modifyTask', 'cancelModify']);
 
 const modifiedTask = ref(title);
+const inputRef = useTemplateRef('input');
+
+onMounted(() => inputRef.value.focus());
 </script>
 
 <template>
@@ -15,6 +18,7 @@ const modifiedTask = ref(title);
   >
     <input
       type="text"
+      ref="input"
       class="w-full bg-transparent border-b outline-none px-1 mr-2"
       v-model="modifiedTask"
     />

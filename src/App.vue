@@ -8,7 +8,7 @@ const data = ref(JSON.parse(localStorage.getItem('data')) ?? []);
 watchEffect(() => localStorage.setItem('data', JSON.stringify(data.value)));
 
 const handleAddNewTask = (newTask) =>
-  data.value.unshift({ id: data.value.length + 1, title: newTask, done: false });
+  data.value.unshift({ id: Date.now(), title: newTask, done: false });
 
 const handleRemoveTask = (id) => (data.value = data.value.filter((task) => task.id !== id));
 
